@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32.SafeHandles;
 
 namespace SPIRVCompilerGUI
 {
@@ -85,5 +87,32 @@ namespace SPIRVCompilerGUI
             CompilePreview.Text = cmd.ToString();
 
         }
+
+        private void BrowseInput_Click(object sender, EventArgs e)
+        {
+            if (openFileDiag.ShowDialog() != DialogResult.OK) { return; }
+            if (!File.Exists(openFileDiag.FileName)) { return; }
+            InputFileBox.Text = openFileDiag.FileName;
+            saveFileDiag.InitialDirectory = openFileDiag.InitialDirectory;
+        }
+
+        private void BrowseOutput_Click(object sender, EventArgs e)
+        {
+            if (saveFileDiag.ShowDialog() != DialogResult.OK) { return; }
+            OutputFileBox.Text = saveFileDiag.FileName;
+        }
+
+        // Event to take in the file data on dragging and dropping
+        private void EDragDrop(object sender, DragEventArgs e)
+        {
+            ((TextBox)sender).Text = ((string[])e.Data.GetData(DataFormats.FileDrop, false))[0];
+        }
+
+        // Event to toggle the mouse to show feedback
+        private void EDragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : DragDropEffects.None;
+        }
+
     }
 }

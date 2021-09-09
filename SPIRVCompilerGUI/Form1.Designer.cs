@@ -74,6 +74,8 @@ namespace SPIRVCompilerGUI
             this.flagC = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ConsoleText = new System.Windows.Forms.TextBox();
+            this.openFileDiag = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDiag = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.OptionsTab.SuspendLayout();
@@ -157,6 +159,7 @@ namespace SPIRVCompilerGUI
             this.BrowseOutput.TabIndex = 1;
             this.BrowseOutput.Text = "Browse";
             this.BrowseOutput.UseVisualStyleBackColor = true;
+            this.BrowseOutput.Click += new System.EventHandler(this.BrowseOutput_Click);
             // 
             // label7
             // 
@@ -169,12 +172,15 @@ namespace SPIRVCompilerGUI
             // 
             // OutputFileBox
             // 
+            this.OutputFileBox.AllowDrop = true;
             this.OutputFileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputFileBox.Location = new System.Drawing.Point(86, 35);
             this.OutputFileBox.Name = "OutputFileBox";
             this.OutputFileBox.Size = new System.Drawing.Size(416, 23);
             this.OutputFileBox.TabIndex = 0;
+            this.OutputFileBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.EDragDrop);
+            this.OutputFileBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.EDragEnter);
             // 
             // BrowseInput
             // 
@@ -185,15 +191,19 @@ namespace SPIRVCompilerGUI
             this.BrowseInput.TabIndex = 1;
             this.BrowseInput.Text = "Browse";
             this.BrowseInput.UseVisualStyleBackColor = true;
+            this.BrowseInput.Click += new System.EventHandler(this.BrowseInput_Click);
             // 
             // InputFileBox
             // 
+            this.InputFileBox.AllowDrop = true;
             this.InputFileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.InputFileBox.Location = new System.Drawing.Point(86, 6);
             this.InputFileBox.Name = "InputFileBox";
             this.InputFileBox.Size = new System.Drawing.Size(416, 23);
             this.InputFileBox.TabIndex = 0;
+            this.InputFileBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.EDragDrop);
+            this.InputFileBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.EDragEnter);
             // 
             // OptionsTab
             // 
@@ -570,6 +580,16 @@ namespace SPIRVCompilerGUI
             this.ConsoleText.TabIndex = 0;
             this.ConsoleText.WordWrap = false;
             // 
+            // openFileDiag
+            // 
+            this.openFileDiag.Filter = "All files|*.*";
+            this.openFileDiag.InitialDirectory = "Application.StartupPath";
+            // 
+            // saveFileDiag
+            // 
+            this.saveFileDiag.Filter = "All files|*.*";
+            this.saveFileDiag.InitialDirectory = "Application.StartupPath";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -579,7 +599,7 @@ namespace SPIRVCompilerGUI
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(615, 690);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "GLSL / SpirV Tool";
             this.tabControl1.ResumeLayout(false);
             this.MainTab.ResumeLayout(false);
             this.MainTab.PerformLayout();
@@ -638,6 +658,8 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.TextBox CompilePreview;
         private System.Windows.Forms.Button CompileButton;
         private System.Windows.Forms.TextBox ConsoleText;
+        private System.Windows.Forms.OpenFileDialog openFileDiag;
+        private System.Windows.Forms.SaveFileDialog saveFileDiag;
     }
 }
 
