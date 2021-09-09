@@ -30,75 +30,176 @@ namespace SPIRVCompilerGUI
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.MainTab = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.OptionsTab = new System.Windows.Forms.TabPage();
+            this.flagvn = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.flagtargetenv = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.flage = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.flagS = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.flagI = new System.Windows.Forms.TextBox();
             this.flagV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.flagx = new System.Windows.Forms.CheckBox();
+            this.flagw = new System.Windows.Forms.CheckBox();
+            this.flaglowerv = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.flaglowers = new System.Windows.Forms.CheckBox();
+            this.flagr = new System.Windows.Forms.CheckBox();
+            this.flagq = new System.Windows.Forms.CheckBox();
+            this.flagm = new System.Windows.Forms.CheckBox();
+            this.flagl = new System.Windows.Forms.CheckBox();
+            this.flagloweri = new System.Windows.Forms.CheckBox();
+            this.flagg0 = new System.Windows.Forms.CheckBox();
+            this.flagg = new System.Windows.Forms.CheckBox();
+            this.flaglowerc = new System.Windows.Forms.CheckBox();
             this.flagOs = new System.Windows.Forms.CheckBox();
             this.flagOd = new System.Windows.Forms.CheckBox();
             this.flagH = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.flagD = new System.Windows.Forms.CheckBox();
             this.flagC = new System.Windows.Forms.CheckBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.flaglowerc = new System.Windows.Forms.CheckBox();
-            this.flage = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.flagg = new System.Windows.Forms.CheckBox();
-            this.flagg0 = new System.Windows.Forms.CheckBox();
-            this.flagloweri = new System.Windows.Forms.CheckBox();
-            this.flagl = new System.Windows.Forms.CheckBox();
-            this.flagm = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.MainTab.SuspendLayout();
+            this.OptionsTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.MainTab);
+            this.tabControl1.Controls.Add(this.OptionsTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(655, 412);
+            this.tabControl1.Size = new System.Drawing.Size(599, 423);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // MainTab
             // 
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.flage);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.flagS);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.flagI);
-            this.tabPage1.Controls.Add(this.flagV);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.flagm);
-            this.tabPage1.Controls.Add(this.flagl);
-            this.tabPage1.Controls.Add(this.flagloweri);
-            this.tabPage1.Controls.Add(this.flagg0);
-            this.tabPage1.Controls.Add(this.flagg);
-            this.tabPage1.Controls.Add(this.flaglowerc);
-            this.tabPage1.Controls.Add(this.flagOs);
-            this.tabPage1.Controls.Add(this.flagOd);
-            this.tabPage1.Controls.Add(this.flagH);
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.flagD);
-            this.tabPage1.Controls.Add(this.flagC);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(647, 384);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "GLSLang Validator";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.MainTab.Controls.Add(this.textBox1);
+            this.MainTab.Location = new System.Drawing.Point(4, 24);
+            this.MainTab.Name = "MainTab";
+            this.MainTab.Padding = new System.Windows.Forms.Padding(3);
+            this.MainTab.Size = new System.Drawing.Size(591, 395);
+            this.MainTab.TabIndex = 1;
+            this.MainTab.Text = "Main";
+            this.MainTab.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(8, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 0;
+            // 
+            // OptionsTab
+            // 
+            this.OptionsTab.Controls.Add(this.flagvn);
+            this.OptionsTab.Controls.Add(this.label6);
+            this.OptionsTab.Controls.Add(this.flagtargetenv);
+            this.OptionsTab.Controls.Add(this.label5);
+            this.OptionsTab.Controls.Add(this.label4);
+            this.OptionsTab.Controls.Add(this.flage);
+            this.OptionsTab.Controls.Add(this.label3);
+            this.OptionsTab.Controls.Add(this.flagS);
+            this.OptionsTab.Controls.Add(this.label2);
+            this.OptionsTab.Controls.Add(this.flagI);
+            this.OptionsTab.Controls.Add(this.flagV);
+            this.OptionsTab.Controls.Add(this.label1);
+            this.OptionsTab.Controls.Add(this.flagx);
+            this.OptionsTab.Controls.Add(this.flagw);
+            this.OptionsTab.Controls.Add(this.flaglowerv);
+            this.OptionsTab.Controls.Add(this.checkBox2);
+            this.OptionsTab.Controls.Add(this.flaglowers);
+            this.OptionsTab.Controls.Add(this.flagr);
+            this.OptionsTab.Controls.Add(this.flagq);
+            this.OptionsTab.Controls.Add(this.flagm);
+            this.OptionsTab.Controls.Add(this.flagl);
+            this.OptionsTab.Controls.Add(this.flagloweri);
+            this.OptionsTab.Controls.Add(this.flagg0);
+            this.OptionsTab.Controls.Add(this.flagg);
+            this.OptionsTab.Controls.Add(this.flaglowerc);
+            this.OptionsTab.Controls.Add(this.flagOs);
+            this.OptionsTab.Controls.Add(this.flagOd);
+            this.OptionsTab.Controls.Add(this.flagH);
+            this.OptionsTab.Controls.Add(this.checkBox1);
+            this.OptionsTab.Controls.Add(this.flagD);
+            this.OptionsTab.Controls.Add(this.flagC);
+            this.OptionsTab.Location = new System.Drawing.Point(4, 24);
+            this.OptionsTab.Name = "OptionsTab";
+            this.OptionsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.OptionsTab.Size = new System.Drawing.Size(591, 395);
+            this.OptionsTab.TabIndex = 0;
+            this.OptionsTab.Text = "Options";
+            this.OptionsTab.UseVisualStyleBackColor = true;
+            // 
+            // flagvn
+            // 
+            this.flagvn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flagvn.Location = new System.Drawing.Point(354, 351);
+            this.flagvn.Name = "flagvn";
+            this.flagvn.Size = new System.Drawing.Size(118, 23);
+            this.flagvn.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(475, 356);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 15);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "-vn : Variable name";
+            // 
+            // flagtargetenv
+            // 
+            this.flagtargetenv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flagtargetenv.Location = new System.Drawing.Point(354, 322);
+            this.flagtargetenv.Name = "flagtargetenv";
+            this.flagtargetenv.Size = new System.Drawing.Size(155, 23);
+            this.flagtargetenv.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(515, 326);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Target env";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(114, 246);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Entry point";
+            // 
+            // flage
+            // 
+            this.flage.Location = new System.Drawing.Point(8, 243);
+            this.flage.Name = "flage";
+            this.flage.Size = new System.Drawing.Size(100, 23);
+            this.flage.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(135, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Stage override";
             // 
             // flagS
             // 
@@ -119,7 +220,7 @@ namespace SPIRVCompilerGUI
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(412, 10);
+            this.label2.Location = new System.Drawing.Point(354, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 15);
             this.label2.TabIndex = 4;
@@ -128,7 +229,7 @@ namespace SPIRVCompilerGUI
             // flagI
             // 
             this.flagI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flagI.Location = new System.Drawing.Point(412, 29);
+            this.flagI.Location = new System.Drawing.Point(354, 29);
             this.flagI.Multiline = true;
             this.flagI.Name = "flagI";
             this.flagI.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -151,6 +252,146 @@ namespace SPIRVCompilerGUI
             this.label1.Size = new System.Drawing.Size(220, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "[Version] Create SPIR-V binary w/ Vulkan";
+            // 
+            // flagx
+            // 
+            this.flagx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flagx.AutoSize = true;
+            this.flagx.Location = new System.Drawing.Point(354, 297);
+            this.flagx.Name = "flagx";
+            this.flagx.Size = new System.Drawing.Size(179, 19);
+            this.flagx.TabIndex = 0;
+            this.flagx.Text = "-x : Save output as 32-bit hex";
+            this.flagx.UseVisualStyleBackColor = true;
+            // 
+            // flagw
+            // 
+            this.flagw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flagw.AutoSize = true;
+            this.flagw.Location = new System.Drawing.Point(354, 272);
+            this.flagw.Name = "flagw";
+            this.flagw.Size = new System.Drawing.Size(147, 19);
+            this.flagw.TabIndex = 0;
+            this.flagw.Text = "-w : Suppress warnings";
+            this.flagw.UseVisualStyleBackColor = true;
+            // 
+            // flaglowerv
+            // 
+            this.flaglowerv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flaglowerv.AutoSize = true;
+            this.flaglowerv.Location = new System.Drawing.Point(354, 246);
+            this.flaglowerv.Name = "flaglowerv";
+            this.flaglowerv.Size = new System.Drawing.Size(112, 19);
+            this.flaglowerv.TabIndex = 0;
+            this.flaglowerv.Text = "-v : Print version";
+            this.flaglowerv.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(354, 221);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(158, 19);
+            this.checkBox2.TabIndex = 0;
+            this.checkBox2.Text = "-t : Multi-threaded mode";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // flaglowers
+            // 
+            this.flaglowers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flaglowers.AutoSize = true;
+            this.flaglowers.Location = new System.Drawing.Point(354, 196);
+            this.flaglowers.Name = "flaglowers";
+            this.flaglowers.Size = new System.Drawing.Size(187, 19);
+            this.flaglowers.TabIndex = 0;
+            this.flaglowers.Text = "-s : Silence syntax error reports";
+            this.flaglowers.UseVisualStyleBackColor = true;
+            // 
+            // flagr
+            // 
+            this.flagr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flagr.AutoSize = true;
+            this.flagr.Location = new System.Drawing.Point(354, 171);
+            this.flagr.Name = "flagr";
+            this.flagr.Size = new System.Drawing.Size(118, 19);
+            this.flagr.TabIndex = 0;
+            this.flagr.Text = "-r : Relaxed errors";
+            this.flagr.UseVisualStyleBackColor = true;
+            // 
+            // flagq
+            // 
+            this.flagq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flagq.AutoSize = true;
+            this.flagq.Location = new System.Drawing.Point(354, 146);
+            this.flagq.Name = "flagq";
+            this.flagq.Size = new System.Drawing.Size(186, 19);
+            this.flagq.TabIndex = 0;
+            this.flagq.Text = "-q : Dump reflection Query DB";
+            this.flagq.UseVisualStyleBackColor = true;
+            // 
+            // flagm
+            // 
+            this.flagm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flagm.AutoSize = true;
+            this.flagm.Location = new System.Drawing.Point(8, 372);
+            this.flagm.Name = "flagm";
+            this.flagm.Size = new System.Drawing.Size(154, 19);
+            this.flagm.TabIndex = 0;
+            this.flagm.Text = "-m : Memory leak mode";
+            this.flagm.UseVisualStyleBackColor = true;
+            // 
+            // flagl
+            // 
+            this.flagl.AutoSize = true;
+            this.flagl.Location = new System.Drawing.Point(8, 347);
+            this.flagl.Name = "flagl";
+            this.flagl.Size = new System.Drawing.Size(129, 19);
+            this.flagl.TabIndex = 0;
+            this.flagl.Text = "-l : Link all modules";
+            this.flagl.UseVisualStyleBackColor = true;
+            // 
+            // flagloweri
+            // 
+            this.flagloweri.AutoSize = true;
+            this.flagloweri.Location = new System.Drawing.Point(8, 322);
+            this.flagloweri.Name = "flagloweri";
+            this.flagloweri.Size = new System.Drawing.Size(161, 19);
+            this.flagloweri.TabIndex = 0;
+            this.flagloweri.Text = "-i : Intermediate tree print";
+            this.flagloweri.UseVisualStyleBackColor = true;
+            // 
+            // flagg0
+            // 
+            this.flagg0.AutoSize = true;
+            this.flagg0.Location = new System.Drawing.Point(8, 297);
+            this.flagg0.Name = "flagg0";
+            this.flagg0.Size = new System.Drawing.Size(180, 19);
+            this.flagg0.TabIndex = 0;
+            this.flagg0.Text = "-g0 : Strip debug information";
+            this.flagg0.UseVisualStyleBackColor = true;
+            // 
+            // flagg
+            // 
+            this.flagg.AutoSize = true;
+            this.flagg.Location = new System.Drawing.Point(8, 272);
+            this.flagg.Name = "flagg";
+            this.flagg.Size = new System.Drawing.Size(197, 19);
+            this.flagg.TabIndex = 0;
+            this.flagg.Text = "-g : Generate debug information";
+            this.flagg.UseVisualStyleBackColor = true;
+            // 
+            // flaglowerc
+            // 
+            this.flaglowerc.AutoSize = true;
+            this.flaglowerc.Location = new System.Drawing.Point(8, 218);
+            this.flaglowerc.Name = "flaglowerc";
+            this.flaglowerc.Size = new System.Drawing.Size(117, 19);
+            this.flaglowerc.TabIndex = 0;
+            this.flaglowerc.Text = "-c : Config dump";
+            this.flaglowerc.UseVisualStyleBackColor = true;
             // 
             // flagOs
             // 
@@ -212,131 +453,29 @@ namespace SPIRVCompilerGUI
             this.flagC.Text = "-C : Cascading Errors";
             this.flagC.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(647, 384);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Spirv Optimizer";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 412);
+            this.panel1.Location = new System.Drawing.Point(0, 423);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(655, 138);
+            this.panel1.Size = new System.Drawing.Size(599, 138);
             this.panel1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(135, 192);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Stage override";
-            // 
-            // flaglowerc
-            // 
-            this.flaglowerc.AutoSize = true;
-            this.flaglowerc.Location = new System.Drawing.Point(8, 218);
-            this.flaglowerc.Name = "flaglowerc";
-            this.flaglowerc.Size = new System.Drawing.Size(117, 19);
-            this.flaglowerc.TabIndex = 0;
-            this.flaglowerc.Text = "-c : Config dump";
-            this.flaglowerc.UseVisualStyleBackColor = true;
-            // 
-            // flage
-            // 
-            this.flage.Location = new System.Drawing.Point(8, 243);
-            this.flage.Name = "flage";
-            this.flage.Size = new System.Drawing.Size(100, 23);
-            this.flage.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(114, 246);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Entry point";
-            // 
-            // flagg
-            // 
-            this.flagg.AutoSize = true;
-            this.flagg.Location = new System.Drawing.Point(8, 272);
-            this.flagg.Name = "flagg";
-            this.flagg.Size = new System.Drawing.Size(197, 19);
-            this.flagg.TabIndex = 0;
-            this.flagg.Text = "-g : Generate debug information";
-            this.flagg.UseVisualStyleBackColor = true;
-            // 
-            // flagg0
-            // 
-            this.flagg0.AutoSize = true;
-            this.flagg0.Location = new System.Drawing.Point(8, 297);
-            this.flagg0.Name = "flagg0";
-            this.flagg0.Size = new System.Drawing.Size(180, 19);
-            this.flagg0.TabIndex = 0;
-            this.flagg0.Text = "-g0 : Strip debug information";
-            this.flagg0.UseVisualStyleBackColor = true;
-            // 
-            // flagloweri
-            // 
-            this.flagloweri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flagloweri.AutoSize = true;
-            this.flagloweri.Location = new System.Drawing.Point(412, 146);
-            this.flagloweri.Name = "flagloweri";
-            this.flagloweri.Size = new System.Drawing.Size(161, 19);
-            this.flagloweri.TabIndex = 0;
-            this.flagloweri.Text = "-i : Intermediate tree print";
-            this.flagloweri.UseVisualStyleBackColor = true;
-            // 
-            // flagl
-            // 
-            this.flagl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flagl.AutoSize = true;
-            this.flagl.Location = new System.Drawing.Point(412, 171);
-            this.flagl.Name = "flagl";
-            this.flagl.Size = new System.Drawing.Size(129, 19);
-            this.flagl.TabIndex = 0;
-            this.flagl.Text = "-l : Link all modules";
-            this.flagl.UseVisualStyleBackColor = true;
-            // 
-            // flagm
-            // 
-            this.flagm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flagm.AutoSize = true;
-            this.flagm.Location = new System.Drawing.Point(412, 196);
-            this.flagm.Name = "flagm";
-            this.flagm.Size = new System.Drawing.Size(154, 19);
-            this.flagm.TabIndex = 0;
-            this.flagm.Text = "-m : Memory leak mode";
-            this.flagm.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(506, 309);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 550);
+            this.ClientSize = new System.Drawing.Size(599, 561);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(615, 600);
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.MainTab.ResumeLayout(false);
+            this.MainTab.PerformLayout();
+            this.OptionsTab.ResumeLayout(false);
+            this.OptionsTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -344,8 +483,8 @@ namespace SPIRVCompilerGUI
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage OptionsTab;
+        private System.Windows.Forms.TabPage MainTab;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox flagS;
         private System.Windows.Forms.Label label2;
@@ -359,7 +498,6 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.CheckBox flagD;
         private System.Windows.Forms.CheckBox flagC;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox flage;
         private System.Windows.Forms.CheckBox flagm;
@@ -368,6 +506,18 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.CheckBox flagg0;
         private System.Windows.Forms.CheckBox flagg;
         private System.Windows.Forms.CheckBox flaglowerc;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox flaglowerv;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox flaglowers;
+        private System.Windows.Forms.CheckBox flagr;
+        private System.Windows.Forms.CheckBox flagq;
+        private System.Windows.Forms.CheckBox flagx;
+        private System.Windows.Forms.CheckBox flagw;
+        private System.Windows.Forms.TextBox flagvn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox flagtargetenv;
+        private System.Windows.Forms.Label label5;
     }
 }
 
