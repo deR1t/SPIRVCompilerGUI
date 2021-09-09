@@ -74,7 +74,7 @@ namespace SPIRVCompilerGUI
             // ok: do includes separate since this one is weird
 
             StringBuilder flagIArg = new StringBuilder("");
-            List<string> args = flagI.Text.Split('\n').ToList();
+            string[] args = flagI.Text.Split('\n');
             foreach (var arg in args)
             {
                 flagIArg.Append($"-I \"{arg}\" ");
