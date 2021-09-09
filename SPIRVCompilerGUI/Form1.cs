@@ -21,8 +21,8 @@ namespace SPIRVCompilerGUI
         { // incoming cheese code
 
             StringBuilder cmd = new StringBuilder("glslangValidator.exe ");
-            Dictionary<string, bool> simpleFlags = new Dictionary<string, bool>
-            { // these are all simple booleans, so ill just loop through this
+            Dictionary<string, bool> boolFlags = new Dictionary<string, bool>
+            { // these are all simple check boxes
                 {"-C", flagC.Checked},
                 {"-D", flagD.Checked},
                 {"-E", flagBoolE.Checked},
@@ -44,7 +44,7 @@ namespace SPIRVCompilerGUI
                 {"-x", flagx.Checked},
             };
 
-            foreach (var (flagString, flagChecked) in simpleFlags)
+            foreach (var (flagString, flagChecked) in boolFlags)
             {
                 if (flagChecked)
                 {
@@ -52,17 +52,26 @@ namespace SPIRVCompilerGUI
                 }
             }
 
-            // now i have to do everything else manually!! weeee
-            //flagV
-            //flagS
-            //flage
-            //flagI
-            //flagtargetenv
-            //flagvn
+            Dictionary<string, string> textFlags = new Dictionary<string, string>
+            {
+                {"-V", flagV.Text},
+                {"-S", flagS.Text},
+                {"-e", flage.Text},
+                {"--target-env", flagtargetenv.Text},
+                {"--vn", flagvn.Text},
+            };
+
+            foreach (var (flagString, flagValue) in textFlags)
+            {
+                if (!string.IsNullOrWhiteSpace(flagValue))
+                {
+                    cmd.Append($"{flagString} \"{flagValue}\" ");
+                }
+            }
 
 
 
-
+            CompilePreview.Text = cmd.ToString();
 
         }
     }
