@@ -31,6 +31,14 @@ namespace SPIRVCompilerGUI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MainTab = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.CompilePreview = new System.Windows.Forms.TextBox();
+            this.CompileButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.BrowseOutput = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.OutputFileBox = new System.Windows.Forms.TextBox();
+            this.BrowseInput = new System.Windows.Forms.Button();
             this.InputFileBox = new System.Windows.Forms.TextBox();
             this.OptionsTab = new System.Windows.Forms.TabPage();
             this.flagvn = new System.Windows.Forms.TextBox();
@@ -48,7 +56,7 @@ namespace SPIRVCompilerGUI
             this.flagx = new System.Windows.Forms.CheckBox();
             this.flagw = new System.Windows.Forms.CheckBox();
             this.flaglowerv = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.flagt = new System.Windows.Forms.CheckBox();
             this.flaglowers = new System.Windows.Forms.CheckBox();
             this.flagr = new System.Windows.Forms.CheckBox();
             this.flagq = new System.Windows.Forms.CheckBox();
@@ -61,18 +69,10 @@ namespace SPIRVCompilerGUI
             this.flagOs = new System.Windows.Forms.CheckBox();
             this.flagOd = new System.Windows.Forms.CheckBox();
             this.flagH = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.flagBoolE = new System.Windows.Forms.CheckBox();
             this.flagD = new System.Windows.Forms.CheckBox();
             this.flagC = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BrowseInput = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.OutputFileBox = new System.Windows.Forms.TextBox();
-            this.BrowseOutput = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.CompileButton = new System.Windows.Forms.Button();
-            this.CompilePreview = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.ConsoleText = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -110,6 +110,82 @@ namespace SPIRVCompilerGUI
             this.MainTab.Text = "Main";
             this.MainTab.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 348);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 15);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Command preview:";
+            // 
+            // CompilePreview
+            // 
+            this.CompilePreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CompilePreview.Location = new System.Drawing.Point(8, 365);
+            this.CompilePreview.Name = "CompilePreview";
+            this.CompilePreview.ReadOnly = true;
+            this.CompilePreview.Size = new System.Drawing.Size(494, 23);
+            this.CompilePreview.TabIndex = 4;
+            // 
+            // CompileButton
+            // 
+            this.CompileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompileButton.Location = new System.Drawing.Point(508, 365);
+            this.CompileButton.Name = "CompileButton";
+            this.CompileButton.Size = new System.Drawing.Size(75, 23);
+            this.CompileButton.TabIndex = 3;
+            this.CompileButton.Text = "Compile!";
+            this.CompileButton.UseVisualStyleBackColor = true;
+            this.CompileButton.Click += new System.EventHandler(this.CompileButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 39);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Output file:";
+            // 
+            // BrowseOutput
+            // 
+            this.BrowseOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BrowseOutput.Location = new System.Drawing.Point(508, 35);
+            this.BrowseOutput.Name = "BrowseOutput";
+            this.BrowseOutput.Size = new System.Drawing.Size(75, 23);
+            this.BrowseOutput.TabIndex = 1;
+            this.BrowseOutput.Text = "Browse";
+            this.BrowseOutput.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 15);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Input file:";
+            // 
+            // OutputFileBox
+            // 
+            this.OutputFileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OutputFileBox.Location = new System.Drawing.Point(86, 35);
+            this.OutputFileBox.Name = "OutputFileBox";
+            this.OutputFileBox.Size = new System.Drawing.Size(416, 23);
+            this.OutputFileBox.TabIndex = 0;
+            // 
+            // BrowseInput
+            // 
+            this.BrowseInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BrowseInput.Location = new System.Drawing.Point(508, 6);
+            this.BrowseInput.Name = "BrowseInput";
+            this.BrowseInput.Size = new System.Drawing.Size(75, 23);
+            this.BrowseInput.TabIndex = 1;
+            this.BrowseInput.Text = "Browse";
+            this.BrowseInput.UseVisualStyleBackColor = true;
+            // 
             // InputFileBox
             // 
             this.InputFileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -136,7 +212,7 @@ namespace SPIRVCompilerGUI
             this.OptionsTab.Controls.Add(this.flagx);
             this.OptionsTab.Controls.Add(this.flagw);
             this.OptionsTab.Controls.Add(this.flaglowerv);
-            this.OptionsTab.Controls.Add(this.checkBox2);
+            this.OptionsTab.Controls.Add(this.flagt);
             this.OptionsTab.Controls.Add(this.flaglowers);
             this.OptionsTab.Controls.Add(this.flagr);
             this.OptionsTab.Controls.Add(this.flagq);
@@ -149,7 +225,7 @@ namespace SPIRVCompilerGUI
             this.OptionsTab.Controls.Add(this.flagOs);
             this.OptionsTab.Controls.Add(this.flagOd);
             this.OptionsTab.Controls.Add(this.flagH);
-            this.OptionsTab.Controls.Add(this.checkBox1);
+            this.OptionsTab.Controls.Add(this.flagBoolE);
             this.OptionsTab.Controls.Add(this.flagD);
             this.OptionsTab.Controls.Add(this.flagC);
             this.OptionsTab.Location = new System.Drawing.Point(4, 24);
@@ -306,18 +382,18 @@ namespace SPIRVCompilerGUI
             this.flaglowerv.Text = "-v : Print version";
             this.flaglowerv.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // flagt
             // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(354, 221);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(158, 19);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "-t : Multi-threaded mode";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.flagt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flagt.AutoSize = true;
+            this.flagt.Checked = true;
+            this.flagt.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.flagt.Location = new System.Drawing.Point(354, 221);
+            this.flagt.Name = "flagt";
+            this.flagt.Size = new System.Drawing.Size(158, 19);
+            this.flagt.TabIndex = 0;
+            this.flagt.Text = "-t : Multi-threaded mode";
+            this.flagt.UseVisualStyleBackColor = true;
             // 
             // flaglowers
             // 
@@ -443,15 +519,15 @@ namespace SPIRVCompilerGUI
             this.flagH.Text = "-H : Print human readable form of SPIR-V";
             this.flagH.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // flagBoolE
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(8, 60);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(178, 19);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "-E : Print pre-processed GLSL";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.flagBoolE.AutoSize = true;
+            this.flagBoolE.Location = new System.Drawing.Point(8, 60);
+            this.flagBoolE.Name = "flagBoolE";
+            this.flagBoolE.Size = new System.Drawing.Size(178, 19);
+            this.flagBoolE.TabIndex = 0;
+            this.flagBoolE.Text = "-E : Print pre-processed GLSL";
+            this.flagBoolE.UseVisualStyleBackColor = true;
             // 
             // flagD
             // 
@@ -482,81 +558,6 @@ namespace SPIRVCompilerGUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(599, 229);
             this.panel1.TabIndex = 1;
-            // 
-            // BrowseInput
-            // 
-            this.BrowseInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BrowseInput.Location = new System.Drawing.Point(508, 6);
-            this.BrowseInput.Name = "BrowseInput";
-            this.BrowseInput.Size = new System.Drawing.Size(75, 23);
-            this.BrowseInput.TabIndex = 1;
-            this.BrowseInput.Text = "Browse";
-            this.BrowseInput.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 15);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Input file:";
-            // 
-            // OutputFileBox
-            // 
-            this.OutputFileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutputFileBox.Location = new System.Drawing.Point(86, 35);
-            this.OutputFileBox.Name = "OutputFileBox";
-            this.OutputFileBox.Size = new System.Drawing.Size(416, 23);
-            this.OutputFileBox.TabIndex = 0;
-            // 
-            // BrowseOutput
-            // 
-            this.BrowseOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BrowseOutput.Location = new System.Drawing.Point(508, 35);
-            this.BrowseOutput.Name = "BrowseOutput";
-            this.BrowseOutput.Size = new System.Drawing.Size(75, 23);
-            this.BrowseOutput.TabIndex = 1;
-            this.BrowseOutput.Text = "Browse";
-            this.BrowseOutput.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 39);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 15);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Output file:";
-            // 
-            // CompileButton
-            // 
-            this.CompileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompileButton.Location = new System.Drawing.Point(508, 365);
-            this.CompileButton.Name = "CompileButton";
-            this.CompileButton.Size = new System.Drawing.Size(75, 23);
-            this.CompileButton.TabIndex = 3;
-            this.CompileButton.Text = "Compile!";
-            this.CompileButton.UseVisualStyleBackColor = true;
-            // 
-            // CompilePreview
-            // 
-            this.CompilePreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CompilePreview.Location = new System.Drawing.Point(8, 365);
-            this.CompilePreview.Name = "CompilePreview";
-            this.CompilePreview.ReadOnly = true;
-            this.CompilePreview.Size = new System.Drawing.Size(494, 23);
-            this.CompilePreview.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 348);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 15);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Command preview:";
             // 
             // ConsoleText
             // 
@@ -604,7 +605,7 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.CheckBox flagOs;
         private System.Windows.Forms.CheckBox flagOd;
         private System.Windows.Forms.CheckBox flagH;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox flagBoolE;
         private System.Windows.Forms.CheckBox flagD;
         private System.Windows.Forms.CheckBox flagC;
         private System.Windows.Forms.Label label3;
@@ -618,7 +619,7 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.CheckBox flaglowerc;
         private System.Windows.Forms.TextBox InputFileBox;
         private System.Windows.Forms.CheckBox flaglowerv;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox flagt;
         private System.Windows.Forms.CheckBox flaglowers;
         private System.Windows.Forms.CheckBox flagr;
         private System.Windows.Forms.CheckBox flagq;
