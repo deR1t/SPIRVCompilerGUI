@@ -57,7 +57,6 @@ namespace SPIRVCompilerGUI
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.flagI = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.flagC = new System.Windows.Forms.CheckBox();
             this.flagOs = new System.Windows.Forms.CheckBox();
             this.flagOd = new System.Windows.Forms.CheckBox();
@@ -71,7 +70,6 @@ namespace SPIRVCompilerGUI
             this.flagl = new System.Windows.Forms.CheckBox();
             this.flagg0 = new System.Windows.Forms.CheckBox();
             this.flagloweri = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.flagq = new System.Windows.Forms.CheckBox();
             this.flagr = new System.Windows.Forms.CheckBox();
             this.flaglowers = new System.Windows.Forms.CheckBox();
@@ -83,15 +81,16 @@ namespace SPIRVCompilerGUI
             this.openFileDiag = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDiag = new System.Windows.Forms.SaveFileDialog();
             this.PreviewUpdater = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.OptionsTab.SuspendLayout();
             this.OptionsFlowPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,7 +101,7 @@ namespace SPIRVCompilerGUI
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(598, 658);
+            this.tabControl1.Size = new System.Drawing.Size(975, 658);
             this.tabControl1.TabIndex = 0;
             // 
             // MainTab
@@ -227,13 +226,11 @@ namespace SPIRVCompilerGUI
             // OptionsTab
             // 
             this.OptionsTab.Controls.Add(this.OptionsFlowPanel);
-            this.OptionsTab.Controls.Add(this.panel2);
-            this.OptionsTab.Controls.Add(this.panel4);
             this.OptionsTab.Controls.Add(this.panel3);
             this.OptionsTab.Location = new System.Drawing.Point(4, 24);
             this.OptionsTab.Name = "OptionsTab";
             this.OptionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OptionsTab.Size = new System.Drawing.Size(590, 630);
+            this.OptionsTab.Size = new System.Drawing.Size(967, 630);
             this.OptionsTab.TabIndex = 0;
             this.OptionsTab.Text = "Options";
             this.OptionsTab.UseVisualStyleBackColor = true;
@@ -242,15 +239,18 @@ namespace SPIRVCompilerGUI
             // 
             this.OptionsFlowPanel.AutoScroll = true;
             this.OptionsFlowPanel.Controls.Add(this.panel1);
-            this.OptionsFlowPanel.Controls.Add(this.panel5);
-            this.OptionsFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.OptionsFlowPanel.Location = new System.Drawing.Point(374, 60);
+            this.OptionsFlowPanel.Controls.Add(this.flowLayoutPanel3);
+            this.OptionsFlowPanel.Controls.Add(this.flowLayoutPanel2);
+            this.OptionsFlowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OptionsFlowPanel.Location = new System.Drawing.Point(3, 3);
             this.OptionsFlowPanel.Name = "OptionsFlowPanel";
-            this.OptionsFlowPanel.Size = new System.Drawing.Size(579, 518);
+            this.OptionsFlowPanel.Size = new System.Drawing.Size(961, 624);
             this.OptionsFlowPanel.TabIndex = 12;
+            this.OptionsFlowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OptionsFlowPanel_Paint);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.flagV);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.flagvn);
@@ -263,7 +263,7 @@ namespace SPIRVCompilerGUI
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(329, 142);
+            this.panel1.Size = new System.Drawing.Size(579, 149);
             this.panel1.TabIndex = 13;
             // 
             // flagV
@@ -358,9 +358,9 @@ namespace SPIRVCompilerGUI
             // 
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.flagI);
-            this.panel5.Location = new System.Drawing.Point(3, 151);
+            this.panel5.Location = new System.Drawing.Point(332, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(329, 133);
+            this.panel5.Size = new System.Drawing.Size(244, 133);
             this.panel5.TabIndex = 13;
             // 
             // label2
@@ -382,24 +382,10 @@ namespace SPIRVCompilerGUI
             this.flagI.TabIndex = 3;
             this.flagI.WordWrap = false;
             // 
-            // panel2
-            // 
-            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.Controls.Add(this.flagC);
-            this.panel2.Controls.Add(this.flagOs);
-            this.panel2.Controls.Add(this.flagOd);
-            this.panel2.Controls.Add(this.flagD);
-            this.panel2.Controls.Add(this.flagH);
-            this.panel2.Controls.Add(this.flagBoolE);
-            this.panel2.Location = new System.Drawing.Point(8, 32);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(329, 150);
-            this.panel2.TabIndex = 13;
-            // 
             // flagC
             // 
             this.flagC.AutoSize = true;
-            this.flagC.Location = new System.Drawing.Point(3, 3);
+            this.flagC.Location = new System.Drawing.Point(3, 103);
             this.flagC.Name = "flagC";
             this.flagC.Size = new System.Drawing.Size(136, 19);
             this.flagC.TabIndex = 0;
@@ -409,7 +395,7 @@ namespace SPIRVCompilerGUI
             // flagOs
             // 
             this.flagOs.AutoSize = true;
-            this.flagOs.Location = new System.Drawing.Point(3, 128);
+            this.flagOs.Location = new System.Drawing.Point(3, 178);
             this.flagOs.Name = "flagOs";
             this.flagOs.Size = new System.Drawing.Size(142, 19);
             this.flagOs.TabIndex = 0;
@@ -419,7 +405,7 @@ namespace SPIRVCompilerGUI
             // flagOd
             // 
             this.flagOd.AutoSize = true;
-            this.flagOd.Location = new System.Drawing.Point(3, 103);
+            this.flagOd.Location = new System.Drawing.Point(3, 153);
             this.flagOd.Name = "flagOd";
             this.flagOd.Size = new System.Drawing.Size(235, 19);
             this.flagOd.TabIndex = 0;
@@ -429,7 +415,7 @@ namespace SPIRVCompilerGUI
             // flagD
             // 
             this.flagD.AutoSize = true;
-            this.flagD.Location = new System.Drawing.Point(3, 28);
+            this.flagD.Location = new System.Drawing.Point(3, 128);
             this.flagD.Name = "flagD";
             this.flagD.Size = new System.Drawing.Size(117, 19);
             this.flagD.TabIndex = 0;
@@ -439,7 +425,7 @@ namespace SPIRVCompilerGUI
             // flagH
             // 
             this.flagH.AutoSize = true;
-            this.flagH.Location = new System.Drawing.Point(3, 78);
+            this.flagH.Location = new System.Drawing.Point(3, 153);
             this.flagH.Name = "flagH";
             this.flagH.Size = new System.Drawing.Size(244, 19);
             this.flagH.TabIndex = 0;
@@ -449,7 +435,7 @@ namespace SPIRVCompilerGUI
             // flagBoolE
             // 
             this.flagBoolE.AutoSize = true;
-            this.flagBoolE.Location = new System.Drawing.Point(3, 53);
+            this.flagBoolE.Location = new System.Drawing.Point(3, 178);
             this.flagBoolE.Name = "flagBoolE";
             this.flagBoolE.Size = new System.Drawing.Size(178, 19);
             this.flagBoolE.TabIndex = 0;
@@ -460,21 +446,15 @@ namespace SPIRVCompilerGUI
             // 
             this.panel3.AutoSize = true;
             this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel3.Controls.Add(this.flaglowerc);
-            this.panel3.Controls.Add(this.flagm);
-            this.panel3.Controls.Add(this.flagg);
-            this.panel3.Controls.Add(this.flagl);
-            this.panel3.Controls.Add(this.flagg0);
-            this.panel3.Controls.Add(this.flagloweri);
             this.panel3.Location = new System.Drawing.Point(8, 191);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(203, 150);
+            this.panel3.Size = new System.Drawing.Size(0, 0);
             this.panel3.TabIndex = 14;
             // 
             // flaglowerc
             // 
             this.flaglowerc.AutoSize = true;
-            this.flaglowerc.Location = new System.Drawing.Point(3, 3);
+            this.flaglowerc.Location = new System.Drawing.Point(3, 53);
             this.flaglowerc.Name = "flaglowerc";
             this.flaglowerc.Size = new System.Drawing.Size(117, 19);
             this.flaglowerc.TabIndex = 0;
@@ -484,7 +464,7 @@ namespace SPIRVCompilerGUI
             // flagm
             // 
             this.flagm.AutoSize = true;
-            this.flagm.Location = new System.Drawing.Point(3, 128);
+            this.flagm.Location = new System.Drawing.Point(3, 53);
             this.flagm.Name = "flagm";
             this.flagm.Size = new System.Drawing.Size(154, 19);
             this.flagm.TabIndex = 0;
@@ -494,7 +474,7 @@ namespace SPIRVCompilerGUI
             // flagg
             // 
             this.flagg.AutoSize = true;
-            this.flagg.Location = new System.Drawing.Point(3, 28);
+            this.flagg.Location = new System.Drawing.Point(3, 3);
             this.flagg.Name = "flagg";
             this.flagg.Size = new System.Drawing.Size(197, 19);
             this.flagg.TabIndex = 0;
@@ -504,7 +484,7 @@ namespace SPIRVCompilerGUI
             // flagl
             // 
             this.flagl.AutoSize = true;
-            this.flagl.Location = new System.Drawing.Point(3, 103);
+            this.flagl.Location = new System.Drawing.Point(3, 28);
             this.flagl.Name = "flagl";
             this.flagl.Size = new System.Drawing.Size(129, 19);
             this.flagl.TabIndex = 0;
@@ -514,7 +494,7 @@ namespace SPIRVCompilerGUI
             // flagg0
             // 
             this.flagg0.AutoSize = true;
-            this.flagg0.Location = new System.Drawing.Point(3, 53);
+            this.flagg0.Location = new System.Drawing.Point(3, 28);
             this.flagg0.Name = "flagg0";
             this.flagg0.Size = new System.Drawing.Size(180, 19);
             this.flagg0.TabIndex = 0;
@@ -531,25 +511,10 @@ namespace SPIRVCompilerGUI
             this.flagloweri.Text = "-i : Intermediate tree print";
             this.flagloweri.UseVisualStyleBackColor = true;
             // 
-            // panel4
-            // 
-            this.panel4.AutoSize = true;
-            this.panel4.Controls.Add(this.flagq);
-            this.panel4.Controls.Add(this.flagr);
-            this.panel4.Controls.Add(this.flaglowers);
-            this.panel4.Controls.Add(this.flagt);
-            this.panel4.Controls.Add(this.flagx);
-            this.panel4.Controls.Add(this.flaglowerv);
-            this.panel4.Controls.Add(this.flagw);
-            this.panel4.Location = new System.Drawing.Point(8, 347);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(193, 176);
-            this.panel4.TabIndex = 13;
-            // 
             // flagq
             // 
             this.flagq.AutoSize = true;
-            this.flagq.Location = new System.Drawing.Point(3, 3);
+            this.flagq.Location = new System.Drawing.Point(3, 103);
             this.flagq.Name = "flagq";
             this.flagq.Size = new System.Drawing.Size(186, 19);
             this.flagq.TabIndex = 0;
@@ -559,7 +524,7 @@ namespace SPIRVCompilerGUI
             // flagr
             // 
             this.flagr.AutoSize = true;
-            this.flagr.Location = new System.Drawing.Point(3, 28);
+            this.flagr.Location = new System.Drawing.Point(3, 3);
             this.flagr.Name = "flagr";
             this.flagr.Size = new System.Drawing.Size(118, 19);
             this.flagr.TabIndex = 0;
@@ -569,7 +534,7 @@ namespace SPIRVCompilerGUI
             // flaglowers
             // 
             this.flaglowers.AutoSize = true;
-            this.flaglowers.Location = new System.Drawing.Point(3, 53);
+            this.flaglowers.Location = new System.Drawing.Point(3, 228);
             this.flaglowers.Name = "flaglowers";
             this.flaglowers.Size = new System.Drawing.Size(187, 19);
             this.flaglowers.TabIndex = 0;
@@ -581,7 +546,7 @@ namespace SPIRVCompilerGUI
             this.flagt.AutoSize = true;
             this.flagt.Checked = true;
             this.flagt.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.flagt.Location = new System.Drawing.Point(3, 78);
+            this.flagt.Location = new System.Drawing.Point(3, 203);
             this.flagt.Name = "flagt";
             this.flagt.Size = new System.Drawing.Size(158, 19);
             this.flagt.TabIndex = 0;
@@ -591,7 +556,7 @@ namespace SPIRVCompilerGUI
             // flagx
             // 
             this.flagx.AutoSize = true;
-            this.flagx.Location = new System.Drawing.Point(3, 154);
+            this.flagx.Location = new System.Drawing.Point(3, 78);
             this.flagx.Name = "flagx";
             this.flagx.Size = new System.Drawing.Size(179, 19);
             this.flagx.TabIndex = 0;
@@ -601,7 +566,7 @@ namespace SPIRVCompilerGUI
             // flaglowerv
             // 
             this.flaglowerv.AutoSize = true;
-            this.flaglowerv.Location = new System.Drawing.Point(3, 103);
+            this.flaglowerv.Location = new System.Drawing.Point(3, 128);
             this.flaglowerv.Name = "flaglowerv";
             this.flaglowerv.Size = new System.Drawing.Size(112, 19);
             this.flaglowerv.TabIndex = 0;
@@ -611,7 +576,7 @@ namespace SPIRVCompilerGUI
             // flagw
             // 
             this.flagw.AutoSize = true;
-            this.flagw.Location = new System.Drawing.Point(3, 129);
+            this.flagw.Location = new System.Drawing.Point(3, 253);
             this.flagw.Name = "flagw";
             this.flagw.Size = new System.Drawing.Size(147, 19);
             this.flagw.TabIndex = 0;
@@ -626,12 +591,12 @@ namespace SPIRVCompilerGUI
             this.ConsoleText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConsoleText.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ConsoleText.ForeColor = System.Drawing.Color.White;
-            this.ConsoleText.Location = new System.Drawing.Point(598, 0);
+            this.ConsoleText.Location = new System.Drawing.Point(975, 0);
             this.ConsoleText.Multiline = true;
             this.ConsoleText.Name = "ConsoleText";
             this.ConsoleText.ReadOnly = true;
             this.ConsoleText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ConsoleText.Size = new System.Drawing.Size(338, 658);
+            this.ConsoleText.Size = new System.Drawing.Size(353, 658);
             this.ConsoleText.TabIndex = 0;
             this.ConsoleText.Text = "This will be replaced!\r\nThis is what the console font will look like!";
             // 
@@ -651,11 +616,48 @@ namespace SPIRVCompilerGUI
             this.PreviewUpdater.Interval = 250;
             this.PreviewUpdater.Tick += new System.EventHandler(this.PreviewUpdater_Tick);
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Controls.Add(this.flagr);
+            this.flowLayoutPanel2.Controls.Add(this.flagl);
+            this.flowLayoutPanel2.Controls.Add(this.flagm);
+            this.flowLayoutPanel2.Controls.Add(this.flagx);
+            this.flowLayoutPanel2.Controls.Add(this.flagC);
+            this.flowLayoutPanel2.Controls.Add(this.flagD);
+            this.flowLayoutPanel2.Controls.Add(this.flagOd);
+            this.flowLayoutPanel2.Controls.Add(this.flagOs);
+            this.flowLayoutPanel2.Controls.Add(this.flagt);
+            this.flowLayoutPanel2.Controls.Add(this.flaglowers);
+            this.flowLayoutPanel2.Controls.Add(this.flagw);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 209);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(241, 275);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.Controls.Add(this.flagg);
+            this.flowLayoutPanel3.Controls.Add(this.flagg0);
+            this.flowLayoutPanel3.Controls.Add(this.flaglowerc);
+            this.flowLayoutPanel3.Controls.Add(this.flagloweri);
+            this.flowLayoutPanel3.Controls.Add(this.flagq);
+            this.flowLayoutPanel3.Controls.Add(this.flaglowerv);
+            this.flowLayoutPanel3.Controls.Add(this.flagH);
+            this.flowLayoutPanel3.Controls.Add(this.flagBoolE);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(588, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(250, 200);
+            this.flowLayoutPanel3.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 658);
+            this.ClientSize = new System.Drawing.Size(1328, 658);
             this.Controls.Add(this.ConsoleText);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
@@ -666,16 +668,15 @@ namespace SPIRVCompilerGUI
             this.OptionsTab.ResumeLayout(false);
             this.OptionsTab.PerformLayout();
             this.OptionsFlowPanel.ResumeLayout(false);
+            this.OptionsFlowPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -730,12 +731,12 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.OpenFileDialog openFileDiag;
         private System.Windows.Forms.SaveFileDialog saveFileDiag;
         private System.Windows.Forms.Timer PreviewUpdater;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.FlowLayoutPanel OptionsFlowPanel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
     }
 }
 

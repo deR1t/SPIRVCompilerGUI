@@ -191,5 +191,9 @@ namespace SPIRVCompilerGUI
             }
         }
 
+        private void OptionsFlowPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
