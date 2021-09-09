@@ -101,7 +101,7 @@ namespace SPIRVCompilerGUI
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(661, 489);
+            this.tabControl1.Size = new System.Drawing.Size(722, 437);
             this.tabControl1.TabIndex = 0;
             // 
             // MainTab
@@ -118,7 +118,7 @@ namespace SPIRVCompilerGUI
             this.MainTab.Location = new System.Drawing.Point(4, 24);
             this.MainTab.Name = "MainTab";
             this.MainTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTab.Size = new System.Drawing.Size(967, 344);
+            this.MainTab.Size = new System.Drawing.Size(714, 409);
             this.MainTab.TabIndex = 1;
             this.MainTab.Text = "Main";
             this.MainTab.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@ namespace SPIRVCompilerGUI
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 377);
+            this.label9.Location = new System.Drawing.Point(8, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(111, 15);
             this.label9.TabIndex = 5;
@@ -138,12 +138,12 @@ namespace SPIRVCompilerGUI
             // 
             this.CompilePreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompilePreview.Location = new System.Drawing.Point(8, 395);
+            this.CompilePreview.Location = new System.Drawing.Point(8, 284);
             this.CompilePreview.Multiline = true;
             this.CompilePreview.Name = "CompilePreview";
             this.CompilePreview.ReadOnly = true;
             this.CompilePreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.CompilePreview.Size = new System.Drawing.Size(493, 117);
+            this.CompilePreview.Size = new System.Drawing.Size(619, 117);
             this.CompilePreview.TabIndex = 4;
             this.CompilePreview.Leave += new System.EventHandler(this.DeselectCompilePrev);
             this.CompilePreview.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SelectCompilePrev);
@@ -151,7 +151,7 @@ namespace SPIRVCompilerGUI
             // CompileButton
             // 
             this.CompileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompileButton.Location = new System.Drawing.Point(507, 489);
+            this.CompileButton.Location = new System.Drawing.Point(633, 378);
             this.CompileButton.Name = "CompileButton";
             this.CompileButton.Size = new System.Drawing.Size(75, 23);
             this.CompileButton.TabIndex = 3;
@@ -171,7 +171,7 @@ namespace SPIRVCompilerGUI
             // BrowseOutput
             // 
             this.BrowseOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BrowseOutput.Location = new System.Drawing.Point(507, 35);
+            this.BrowseOutput.Location = new System.Drawing.Point(633, 35);
             this.BrowseOutput.Name = "BrowseOutput";
             this.BrowseOutput.Size = new System.Drawing.Size(75, 23);
             this.BrowseOutput.TabIndex = 1;
@@ -195,7 +195,7 @@ namespace SPIRVCompilerGUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputFileBox.Location = new System.Drawing.Point(86, 35);
             this.OutputFileBox.Name = "OutputFileBox";
-            this.OutputFileBox.Size = new System.Drawing.Size(415, 23);
+            this.OutputFileBox.Size = new System.Drawing.Size(541, 23);
             this.OutputFileBox.TabIndex = 0;
             this.OutputFileBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.EDragDrop);
             this.OutputFileBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.EDragEnter);
@@ -203,7 +203,7 @@ namespace SPIRVCompilerGUI
             // BrowseInput
             // 
             this.BrowseInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BrowseInput.Location = new System.Drawing.Point(507, 6);
+            this.BrowseInput.Location = new System.Drawing.Point(633, 6);
             this.BrowseInput.Name = "BrowseInput";
             this.BrowseInput.Size = new System.Drawing.Size(75, 23);
             this.BrowseInput.TabIndex = 1;
@@ -218,7 +218,7 @@ namespace SPIRVCompilerGUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.InputFileBox.Location = new System.Drawing.Point(86, 6);
             this.InputFileBox.Name = "InputFileBox";
-            this.InputFileBox.Size = new System.Drawing.Size(415, 23);
+            this.InputFileBox.Size = new System.Drawing.Size(541, 23);
             this.InputFileBox.TabIndex = 0;
             this.InputFileBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.EDragDrop);
             this.InputFileBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.EDragEnter);
@@ -230,7 +230,7 @@ namespace SPIRVCompilerGUI
             this.OptionsTab.Location = new System.Drawing.Point(4, 24);
             this.OptionsTab.Name = "OptionsTab";
             this.OptionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OptionsTab.Size = new System.Drawing.Size(653, 461);
+            this.OptionsTab.Size = new System.Drawing.Size(714, 409);
             this.OptionsTab.TabIndex = 0;
             this.OptionsTab.Text = "Options";
             this.OptionsTab.UseVisualStyleBackColor = true;
@@ -243,7 +243,7 @@ namespace SPIRVCompilerGUI
             this.OptionsFlowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OptionsFlowPanel.Location = new System.Drawing.Point(3, 3);
             this.OptionsFlowPanel.Name = "OptionsFlowPanel";
-            this.OptionsFlowPanel.Size = new System.Drawing.Size(647, 455);
+            this.OptionsFlowPanel.Size = new System.Drawing.Size(708, 403);
             this.OptionsFlowPanel.TabIndex = 12;
             this.OptionsFlowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OptionsFlowPanel_Paint);
             // 
@@ -399,7 +399,7 @@ namespace SPIRVCompilerGUI
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 158);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(497, 275);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(690, 225);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // flagr
@@ -497,7 +497,7 @@ namespace SPIRVCompilerGUI
             // flaglowers
             // 
             this.flaglowers.AutoSize = true;
-            this.flaglowers.Location = new System.Drawing.Point(3, 228);
+            this.flaglowers.Location = new System.Drawing.Point(244, 3);
             this.flaglowers.Name = "flaglowers";
             this.flaglowers.Size = new System.Drawing.Size(187, 19);
             this.flaglowers.TabIndex = 0;
@@ -507,7 +507,7 @@ namespace SPIRVCompilerGUI
             // flagw
             // 
             this.flagw.AutoSize = true;
-            this.flagw.Location = new System.Drawing.Point(3, 253);
+            this.flagw.Location = new System.Drawing.Point(244, 28);
             this.flagw.Name = "flagw";
             this.flagw.Size = new System.Drawing.Size(147, 19);
             this.flagw.TabIndex = 0;
@@ -526,7 +526,7 @@ namespace SPIRVCompilerGUI
             this.flowLayoutPanel3.Controls.Add(this.flagH);
             this.flowLayoutPanel3.Controls.Add(this.flagBoolE);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(244, 3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(437, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(250, 200);
             this.flowLayoutPanel3.TabIndex = 2;
@@ -628,12 +628,12 @@ namespace SPIRVCompilerGUI
             this.ConsoleText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConsoleText.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ConsoleText.ForeColor = System.Drawing.Color.White;
-            this.ConsoleText.Location = new System.Drawing.Point(661, 0);
+            this.ConsoleText.Location = new System.Drawing.Point(722, 0);
             this.ConsoleText.Multiline = true;
             this.ConsoleText.Name = "ConsoleText";
             this.ConsoleText.ReadOnly = true;
             this.ConsoleText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ConsoleText.Size = new System.Drawing.Size(352, 489);
+            this.ConsoleText.Size = new System.Drawing.Size(264, 437);
             this.ConsoleText.TabIndex = 0;
             this.ConsoleText.Text = "This will be replaced!\r\nThis is what the console font will look like!";
             // 
@@ -657,7 +657,7 @@ namespace SPIRVCompilerGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 489);
+            this.ClientSize = new System.Drawing.Size(986, 437);
             this.Controls.Add(this.ConsoleText);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
