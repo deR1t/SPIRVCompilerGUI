@@ -25,7 +25,7 @@ namespace SPIRVCompilerGUI
             InitializeComponent();
 
             // set up the console!
-            
+
             cmdProc.StartInfo.FileName = "cmd.exe";
             cmdProc.StartInfo.CreateNoWindow = true;
             cmdProc.EnableRaisingEvents = true;
@@ -170,5 +170,24 @@ namespace SPIRVCompilerGUI
         { // yes i couldnt think of a better way to do this. this is bad.
             CompilePreview.Text = GetCommand();
         }
+
+        private void SelectCompilePrev(object sender, MouseEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(CompilePreview.Text))
+            {
+                CompilePreview.SelectionStart = 0;
+                CompilePreview.SelectionLength = CompilePreview.Text.Length;
+            }
+        }
+
+        private void DeselectCompilePrev(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(CompilePreview.Text))
+            {
+                CompilePreview.SelectionStart = 0;
+                CompilePreview.SelectionLength = 0;
+            }
+        }
+
     }
 }
