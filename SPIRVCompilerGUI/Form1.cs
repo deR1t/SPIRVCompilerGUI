@@ -24,13 +24,6 @@ namespace SPIRVCompilerGUI
         {
             InitializeComponent();
 
-            // set a different default (hopefully) for larger resolutions
-            if(Screen.FromControl(this).Bounds.X > 2000)
-            {
-                FontSlider.Value = 12;
-                ConsoleText.Font = new Font(ConsoleText.Font.FontFamily, FontSlider.Value);
-            }
-
             OptionsFlowPanel.HorizontalScroll.Enabled = false;
             OptionsFlowPanel.HorizontalScroll.Visible = false;
             labelFontSize.Text = FontSlider.Value.ToString();
@@ -39,10 +32,17 @@ namespace SPIRVCompilerGUI
             if(!File.Exists("config.txt")) { var a = File.Create("config.txt"); a.Close(); }
 
             // get the config file
+            string line = "";
             StreamReader file = new StreamReader("config.txt");
             InputFileBox.Text = file.ReadLine();
             OutputFileBox.Text = file.ReadLine();
             GLSLangBox.Text = file.ReadLine();
+            var val = Convert.ToInt32(file.ReadLine());
+            if (val == 0) { val = 9; } // magic number for the default font size. }
+            val = Math.Clamp(val, FontSlider.Minimum, FontSlider.Maximum);
+            FontSlider.Value = val;
+            WordWrapBox.Checked = Convert.ToBoolean(file.ReadLine());
+
             file.Close();
 
             // set up the console!
@@ -145,15 +145,17 @@ namespace SPIRVCompilerGUI
             {
                 if (arg != "")
                 {
-                    flagIArg.Append($"-I \"{arg.Replace("\r", "")}\" ");
+                    flagIArg.Append($"-I\"{arg.Replace("\r", "")}\" ");
                 }
             }
 
             cmd.Append(flagIArg);
 
-            // we always compile vulkan because i'm only using vulkan
-            // and also i dont feel like adding a checkbox.
-            cmd.Append($"-V -o \"{OutputFileBox.Text}\"");
+            if (string.IsNullOrWhiteSpace(textFlags["-V"]))
+            {
+                cmd.Append("-V ");
+            }
+            cmd.Append($"-o \"{OutputFileBox.Text}\"");
 
             return cmd.ToString();
 
@@ -241,6 +243,8 @@ namespace SPIRVCompilerGUI
             file.WriteLine($"{InputFileBox.Text}");
             file.WriteLine($"{OutputFileBox.Text}");
             file.WriteLine($"{GLSLangBox.Text}");
+            file.WriteLine($"{FontSlider.Value}");
+            file.WriteLine($"{WordWrapBox.Checked}");
             file.Close();
 
         }
