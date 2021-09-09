@@ -36,7 +36,7 @@ namespace SPIRVCompilerGUI
             labelFontSize.Text = FontSlider.Value.ToString();
 
             // create cfg if it isnt there yet
-            if(!File.Exists("config.txt")) { File.Create("config.txt"); }
+            if(!File.Exists("config.txt")) { var a = File.Create("config.txt"); a.Close(); }
 
             // get the config file
             StreamReader file = new StreamReader("config.txt");
