@@ -52,6 +52,8 @@ namespace SPIRVCompilerGUI
                 }
             }
 
+            // now i do it again with the simple text ones
+
             Dictionary<string, string> textFlags = new Dictionary<string, string>
             {
                 {"-V", flagV.Text},
@@ -69,7 +71,25 @@ namespace SPIRVCompilerGUI
                 }
             }
 
+            // ok: do includes separate since this one is weird
 
+            StringBuilder flagIArg = new StringBuilder("");
+            StringBuilder curLine = new StringBuilder("");
+            char c = ' ';
+            for (int i = 0; i <= flagI.Text.Length; i++)
+            {
+                if (i != flagI.Text.Length){ c = flagI.Text[i]; }
+                if (c == '\n') {continue;}
+                if (c == '\r' || i == flagI.Text.Length)
+                {
+                    flagIArg.Append($"-I \"{curLine}\" ");
+                    curLine.Clear();
+                    continue;
+                }
+                curLine.Append(c);
+            }
+
+            cmd.Append(flagIArg);
 
             CompilePreview.Text = cmd.ToString();
 

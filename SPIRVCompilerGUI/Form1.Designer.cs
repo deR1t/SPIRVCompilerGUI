@@ -318,9 +318,9 @@ namespace SPIRVCompilerGUI
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(354, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 15);
+            this.label2.Size = new System.Drawing.Size(232, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Include Directories";
+            this.label2.Text = "Include Directories (seperated by newlines)";
             // 
             // flagI
             // 
