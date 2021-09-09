@@ -32,6 +32,13 @@ namespace SPIRVCompilerGUI
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MainTab = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.WordWrapBox = new System.Windows.Forms.CheckBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labelFontSize = new System.Windows.Forms.Label();
+            this.FontSlider = new System.Windows.Forms.TrackBar();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.CompilePreview = new System.Windows.Forms.TextBox();
             this.CompileButton = new System.Windows.Forms.Button();
@@ -85,6 +92,10 @@ namespace SPIRVCompilerGUI
             this.PreviewUpdater = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.MainTab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FontSlider)).BeginInit();
             this.OptionsTab.SuspendLayout();
             this.OptionsFlowPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -106,6 +117,7 @@ namespace SPIRVCompilerGUI
             // 
             // MainTab
             // 
+            this.MainTab.Controls.Add(this.groupBox1);
             this.MainTab.Controls.Add(this.label9);
             this.MainTab.Controls.Add(this.CompilePreview);
             this.MainTab.Controls.Add(this.CompileButton);
@@ -123,6 +135,83 @@ namespace SPIRVCompilerGUI
             this.MainTab.Text = "Main";
             this.MainTab.UseVisualStyleBackColor = true;
             this.MainTab.Click += new System.EventHandler(this.DeselectCompilePrev);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(207, 125);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Console Options";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.WordWrapBox);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 19);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(201, 103);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // WordWrapBox
+            // 
+            this.WordWrapBox.AutoSize = true;
+            this.WordWrapBox.Location = new System.Drawing.Point(3, 3);
+            this.WordWrapBox.Name = "WordWrapBox";
+            this.WordWrapBox.Size = new System.Drawing.Size(86, 19);
+            this.WordWrapBox.TabIndex = 0;
+            this.WordWrapBox.Text = "Word Wrap";
+            this.WordWrapBox.UseVisualStyleBackColor = true;
+            this.WordWrapBox.Click += new System.EventHandler(this.WordWrapBox_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labelFontSize);
+            this.panel2.Controls.Add(this.FontSlider);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Location = new System.Drawing.Point(3, 28);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(188, 69);
+            this.panel2.TabIndex = 7;
+            // 
+            // labelFontSize
+            // 
+            this.labelFontSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFontSize.AutoSize = true;
+            this.labelFontSize.Location = new System.Drawing.Point(167, 32);
+            this.labelFontSize.Name = "labelFontSize";
+            this.labelFontSize.Size = new System.Drawing.Size(13, 15);
+            this.labelFontSize.TabIndex = 8;
+            this.labelFontSize.Text = "0";
+            // 
+            // FontSlider
+            // 
+            this.FontSlider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FontSlider.BackColor = System.Drawing.Color.White;
+            this.FontSlider.LargeChange = 1;
+            this.FontSlider.Location = new System.Drawing.Point(3, 22);
+            this.FontSlider.Maximum = 20;
+            this.FontSlider.Minimum = 6;
+            this.FontSlider.Name = "FontSlider";
+            this.FontSlider.Size = new System.Drawing.Size(163, 45);
+            this.FontSlider.TabIndex = 1;
+            this.FontSlider.Value = 9;
+            this.FontSlider.ValueChanged += new System.EventHandler(this.FontSlider_ValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 15);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Font Size";
             // 
             // label9
             // 
@@ -245,7 +334,6 @@ namespace SPIRVCompilerGUI
             this.OptionsFlowPanel.Name = "OptionsFlowPanel";
             this.OptionsFlowPanel.Size = new System.Drawing.Size(708, 403);
             this.OptionsFlowPanel.TabIndex = 12;
-            this.OptionsFlowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OptionsFlowPanel_Paint);
             // 
             // panel1
             // 
@@ -636,6 +724,7 @@ namespace SPIRVCompilerGUI
             this.ConsoleText.Size = new System.Drawing.Size(264, 437);
             this.ConsoleText.TabIndex = 0;
             this.ConsoleText.Text = "This will be replaced!\r\nThis is what the console font will look like!";
+            this.ConsoleText.WordWrap = false;
             // 
             // openFileDiag
             // 
@@ -665,6 +754,12 @@ namespace SPIRVCompilerGUI
             this.tabControl1.ResumeLayout(false);
             this.MainTab.ResumeLayout(false);
             this.MainTab.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FontSlider)).EndInit();
             this.OptionsTab.ResumeLayout(false);
             this.OptionsTab.PerformLayout();
             this.OptionsFlowPanel.ResumeLayout(false);
@@ -737,6 +832,13 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TrackBar FontSlider;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.CheckBox WordWrapBox;
+        private System.Windows.Forms.Label labelFontSize;
     }
 }
 

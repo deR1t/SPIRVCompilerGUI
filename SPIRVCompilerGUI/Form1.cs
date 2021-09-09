@@ -23,8 +23,17 @@ namespace SPIRVCompilerGUI
         public Form1()
         {
             InitializeComponent();
+
+            // set a different default (hopefully) for larger resolutions
+            if(Screen.FromControl(this).Bounds.X > 2000)
+            {
+                FontSlider.Value = 12;
+                ConsoleText.Font = new Font(ConsoleText.Font.FontFamily, FontSlider.Value);
+            }
+
             OptionsFlowPanel.HorizontalScroll.Enabled = false;
             OptionsFlowPanel.HorizontalScroll.Visible = false;
+            labelFontSize.Text = FontSlider.Value.ToString();
 
             // set up the console!
 
@@ -191,9 +200,16 @@ namespace SPIRVCompilerGUI
             }
         }
 
-        private void OptionsFlowPanel_Paint(object sender, PaintEventArgs e)
+        private void FontSlider_ValueChanged(object sender, EventArgs e)
         {
-
+            ConsoleText.Font = new Font(ConsoleText.Font.FontFamily, FontSlider.Value);
+            labelFontSize.Text = FontSlider.Value.ToString();
         }
+
+        private void WordWrapBox_Click(object sender, EventArgs e)
+        {
+            ConsoleText.WordWrap = WordWrapBox.Checked;
+        }
+
     }
 }
