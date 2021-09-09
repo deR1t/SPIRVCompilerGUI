@@ -44,8 +44,11 @@ namespace SPIRVCompilerGUI
             this.CompileButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.BrowseOutput = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.GLSLangBrowse = new System.Windows.Forms.Button();
             this.OutputFileBox = new System.Windows.Forms.TextBox();
+            this.GLSLangBox = new System.Windows.Forms.TextBox();
             this.BrowseInput = new System.Windows.Forms.Button();
             this.InputFileBox = new System.Windows.Forms.TextBox();
             this.OptionsTab = new System.Windows.Forms.TabPage();
@@ -123,8 +126,11 @@ namespace SPIRVCompilerGUI
             this.MainTab.Controls.Add(this.CompileButton);
             this.MainTab.Controls.Add(this.label8);
             this.MainTab.Controls.Add(this.BrowseOutput);
+            this.MainTab.Controls.Add(this.label11);
             this.MainTab.Controls.Add(this.label7);
+            this.MainTab.Controls.Add(this.GLSLangBrowse);
             this.MainTab.Controls.Add(this.OutputFileBox);
+            this.MainTab.Controls.Add(this.GLSLangBox);
             this.MainTab.Controls.Add(this.BrowseInput);
             this.MainTab.Controls.Add(this.InputFileBox);
             this.MainTab.Location = new System.Drawing.Point(4, 24);
@@ -140,7 +146,7 @@ namespace SPIRVCompilerGUI
             // 
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 64);
+            this.groupBox1.Location = new System.Drawing.Point(8, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(207, 125);
             this.groupBox1.TabIndex = 6;
@@ -251,7 +257,7 @@ namespace SPIRVCompilerGUI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 39);
+            this.label8.Location = new System.Drawing.Point(7, 37);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 15);
             this.label8.TabIndex = 2;
@@ -260,7 +266,7 @@ namespace SPIRVCompilerGUI
             // BrowseOutput
             // 
             this.BrowseOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BrowseOutput.Location = new System.Drawing.Point(633, 35);
+            this.BrowseOutput.Location = new System.Drawing.Point(633, 33);
             this.BrowseOutput.Name = "BrowseOutput";
             this.BrowseOutput.Size = new System.Drawing.Size(75, 23);
             this.BrowseOutput.TabIndex = 1;
@@ -268,31 +274,63 @@ namespace SPIRVCompilerGUI
             this.BrowseOutput.UseVisualStyleBackColor = true;
             this.BrowseOutput.Click += new System.EventHandler(this.BrowseOutput_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 15);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "glslang.exe location:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 10);
+            this.label7.Location = new System.Drawing.Point(8, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 15);
             this.label7.TabIndex = 2;
             this.label7.Text = "Input file:";
+            // 
+            // GLSLangBrowse
+            // 
+            this.GLSLangBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GLSLangBrowse.Location = new System.Drawing.Point(633, 62);
+            this.GLSLangBrowse.Name = "GLSLangBrowse";
+            this.GLSLangBrowse.Size = new System.Drawing.Size(75, 23);
+            this.GLSLangBrowse.TabIndex = 1;
+            this.GLSLangBrowse.Text = "Browse";
+            this.GLSLangBrowse.UseVisualStyleBackColor = true;
+            this.GLSLangBrowse.Click += new System.EventHandler(this.GLSLangBrowse_Click);
             // 
             // OutputFileBox
             // 
             this.OutputFileBox.AllowDrop = true;
             this.OutputFileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutputFileBox.Location = new System.Drawing.Point(86, 35);
+            this.OutputFileBox.Location = new System.Drawing.Point(143, 33);
             this.OutputFileBox.Name = "OutputFileBox";
-            this.OutputFileBox.Size = new System.Drawing.Size(541, 23);
+            this.OutputFileBox.Size = new System.Drawing.Size(484, 23);
             this.OutputFileBox.TabIndex = 0;
             this.OutputFileBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.EDragDrop);
             this.OutputFileBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.EDragEnter);
             // 
+            // GLSLangBox
+            // 
+            this.GLSLangBox.AllowDrop = true;
+            this.GLSLangBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GLSLangBox.Location = new System.Drawing.Point(143, 62);
+            this.GLSLangBox.Name = "GLSLangBox";
+            this.GLSLangBox.Size = new System.Drawing.Size(484, 23);
+            this.GLSLangBox.TabIndex = 0;
+            this.GLSLangBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.EDragDrop);
+            this.GLSLangBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.EDragEnter);
+            // 
             // BrowseInput
             // 
             this.BrowseInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BrowseInput.Location = new System.Drawing.Point(633, 6);
+            this.BrowseInput.Location = new System.Drawing.Point(633, 4);
             this.BrowseInput.Name = "BrowseInput";
             this.BrowseInput.Size = new System.Drawing.Size(75, 23);
             this.BrowseInput.TabIndex = 1;
@@ -305,9 +343,9 @@ namespace SPIRVCompilerGUI
             this.InputFileBox.AllowDrop = true;
             this.InputFileBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.InputFileBox.Location = new System.Drawing.Point(86, 6);
+            this.InputFileBox.Location = new System.Drawing.Point(143, 4);
             this.InputFileBox.Name = "InputFileBox";
-            this.InputFileBox.Size = new System.Drawing.Size(541, 23);
+            this.InputFileBox.Size = new System.Drawing.Size(484, 23);
             this.InputFileBox.TabIndex = 0;
             this.InputFileBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.EDragDrop);
             this.InputFileBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.EDragEnter);
@@ -751,6 +789,7 @@ namespace SPIRVCompilerGUI
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "GLSL / SpirV Tool";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.MainTab.ResumeLayout(false);
             this.MainTab.PerformLayout();
@@ -839,6 +878,9 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.CheckBox WordWrapBox;
         private System.Windows.Forms.Label labelFontSize;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button GLSLangBrowse;
+        private System.Windows.Forms.TextBox GLSLangBox;
     }
 }
 

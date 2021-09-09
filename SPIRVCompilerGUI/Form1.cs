@@ -35,6 +35,16 @@ namespace SPIRVCompilerGUI
             OptionsFlowPanel.HorizontalScroll.Visible = false;
             labelFontSize.Text = FontSlider.Value.ToString();
 
+            // create cfg if it isnt there yet
+            if(!File.Exists("config.txt")) { File.Create("config.txt"); }
+
+            // get the config file
+            StreamReader file = new StreamReader("config.txt");
+            InputFileBox.Text = file.ReadLine();
+            OutputFileBox.Text = file.ReadLine();
+            GLSLangBox.Text = file.ReadLine();
+            file.Close();
+
             // set up the console!
 
             cmdProc.StartInfo.FileName = "cmd.exe";
@@ -71,7 +81,12 @@ namespace SPIRVCompilerGUI
         private string GetCommand()
         { // incoming cheese code
 
-            StringBuilder cmd = new StringBuilder("glslangValidator.exe \"" + InputFileBox.Text + "\" ");
+            string glang = "glslangValidator.exe";
+            if (!string.IsNullOrWhiteSpace(GLSLangBox.Text))
+            {
+                glang = GLSLangBox.Text;
+            }
+            StringBuilder cmd = new StringBuilder(glang + " \"" + InputFileBox.Text + "\" ");
             Dictionary<string, bool> boolFlags = new Dictionary<string, bool>
             { // these are all simple check boxes
                 {"-C", flagC.Checked},
@@ -164,6 +179,14 @@ namespace SPIRVCompilerGUI
             if (saveFileDiag.ShowDialog() != DialogResult.OK) { return; }
             OutputFileBox.Text = saveFileDiag.FileName;
         }
+        private void GLSLangBrowse_Click(object sender, EventArgs e)
+        {
+            if (openFileDiag.ShowDialog() != DialogResult.OK) { return; }
+            if (!File.Exists(openFileDiag.FileName)) { return; }
+            GLSLangBox.Text = openFileDiag.FileName;
+            saveFileDiag.InitialDirectory = openFileDiag.InitialDirectory;
+        }
+
 
         // Event to take in the file data on dragging and dropping
         private void EDragDrop(object sender, DragEventArgs e)
@@ -209,6 +232,17 @@ namespace SPIRVCompilerGUI
         private void WordWrapBox_Click(object sender, EventArgs e)
         {
             ConsoleText.WordWrap = WordWrapBox.Checked;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        { // save some stuffs
+
+            StreamWriter file = new StreamWriter("config.txt");
+            file.WriteLine($"{InputFileBox.Text}");
+            file.WriteLine($"{OutputFileBox.Text}");
+            file.WriteLine($"{GLSLangBox.Text}");
+            file.Close();
+
         }
 
     }
