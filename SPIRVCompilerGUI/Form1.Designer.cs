@@ -233,6 +233,7 @@ namespace SPIRVCompilerGUI
             // 
             this.CompilePreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompilePreview.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CompilePreview.Location = new System.Drawing.Point(8, 284);
             this.CompilePreview.Multiline = true;
             this.CompilePreview.Name = "CompilePreview";

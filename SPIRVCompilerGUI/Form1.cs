@@ -145,7 +145,7 @@ namespace SPIRVCompilerGUI
             {
                 if (arg != "")
                 {
-                    flagIArg.Append($"-I \"{arg.Replace("\r", "")}\"");
+                    flagIArg.Append($"-I \"{arg.Replace("\r", "")}\" ");
                 }
             }
 
