@@ -23,6 +23,8 @@ namespace SPIRVCompilerGUI
         public Form1()
         {
             InitializeComponent();
+            OptionsFlowPanel.HorizontalScroll.Enabled = false;
+            OptionsFlowPanel.HorizontalScroll.Visible = false;
 
             // set up the console!
 
