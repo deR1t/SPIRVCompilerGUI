@@ -29,6 +29,7 @@ namespace SPIRVCompilerGUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MainTab = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@ namespace SPIRVCompilerGUI
             this.ConsoleText = new System.Windows.Forms.TextBox();
             this.openFileDiag = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDiag = new System.Windows.Forms.SaveFileDialog();
+            this.PreviewUpdater = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.OptionsTab.SuspendLayout();
@@ -124,7 +126,8 @@ namespace SPIRVCompilerGUI
             // 
             // CompilePreview
             // 
-            this.CompilePreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CompilePreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CompilePreview.Location = new System.Drawing.Point(8, 365);
             this.CompilePreview.Name = "CompilePreview";
             this.CompilePreview.ReadOnly = true;
@@ -441,7 +444,6 @@ namespace SPIRVCompilerGUI
             // 
             // flagm
             // 
-            this.flagm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flagm.AutoSize = true;
             this.flagm.Location = new System.Drawing.Point(8, 372);
             this.flagm.Name = "flagm";
@@ -597,6 +599,12 @@ namespace SPIRVCompilerGUI
             this.saveFileDiag.Filter = "All files|*.*";
             this.saveFileDiag.InitialDirectory = "Application.StartupPath";
             // 
+            // PreviewUpdater
+            // 
+            this.PreviewUpdater.Enabled = true;
+            this.PreviewUpdater.Interval = 250;
+            this.PreviewUpdater.Tick += new System.EventHandler(this.PreviewUpdater_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -667,6 +675,7 @@ namespace SPIRVCompilerGUI
         private System.Windows.Forms.TextBox ConsoleText;
         private System.Windows.Forms.OpenFileDialog openFileDiag;
         private System.Windows.Forms.SaveFileDialog saveFileDiag;
+        private System.Windows.Forms.Timer PreviewUpdater;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32.SafeHandles;
@@ -44,18 +45,20 @@ namespace SPIRVCompilerGUI
         }
 
         public void ConsoleDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            ConsoleText.Text += e.Data + "\r\n";
-            if (e.Data.Contains('\f')) { ConsoleText.Text = ""; }
+        { // https://stackoverflow.com/questions/7609839/accessing-a-forms-control-from-a-separate-thread
+            if (!ConsoleText.InvokeRequired)
+            {
+                ConsoleText.Text += e.Data + "\r\n";
+                if (e.Data.Contains('\f')) { ConsoleText.Text = ""; }
+            }
+            else
+            {
+                Invoke(new Action<object, DataReceivedEventArgs>(ConsoleDataReceived), sender, e);
+            }
         }
 
-        private void CompileButton_Click(object sender, EventArgs e)
+        private string GetCommand()
         { // incoming cheese code
-
-            if (!File.Exists(InputFileBox.Text))
-            { // todo: scream at the user for being silly or something
-                return;
-            }
 
             StringBuilder cmd = new StringBuilder("glslangValidator.exe \"" + InputFileBox.Text + "\" ");
             Dictionary<string, bool> boolFlags = new Dictionary<string, bool>
@@ -125,9 +128,16 @@ namespace SPIRVCompilerGUI
             // we always compile vulkan because i'm only using vulkan
             // and also i dont feel like adding a checkbox.
             cmd.Append($"-V -o \"{OutputFileBox.Text}\"");
-            
-            CompilePreview.Text = cmd.ToString();
 
+            return cmd.ToString();
+
+        }
+
+        private void CompileButton_Click(object sender, EventArgs e)
+        {
+            CompilePreview.Text = GetCommand();
+            cmd.WriteLine("cls");
+            cmd.WriteLine(CompilePreview.Text); // run the command!
         }
 
         private void BrowseInput_Click(object sender, EventArgs e)
@@ -156,5 +166,9 @@ namespace SPIRVCompilerGUI
             e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : DragDropEffects.None;
         }
 
+        private void PreviewUpdater_Tick(object sender, EventArgs e)
+        { // yes i couldnt think of a better way to do this. this is bad.
+            CompilePreview.Text = GetCommand();
+        }
     }
 }
