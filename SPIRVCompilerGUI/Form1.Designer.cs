@@ -114,6 +114,7 @@ namespace SPIRVCompilerGUI
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(8, 348);
             this.label9.Name = "label9";
@@ -572,13 +573,19 @@ namespace SPIRVCompilerGUI
             // ConsoleText
             // 
             this.ConsoleText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ConsoleText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ConsoleText.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ConsoleText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConsoleText.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ConsoleText.ForeColor = System.Drawing.Color.White;
             this.ConsoleText.Location = new System.Drawing.Point(0, 0);
             this.ConsoleText.Multiline = true;
             this.ConsoleText.Name = "ConsoleText";
+            this.ConsoleText.ReadOnly = true;
+            this.ConsoleText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.ConsoleText.Size = new System.Drawing.Size(599, 229);
             this.ConsoleText.TabIndex = 0;
-            this.ConsoleText.WordWrap = false;
+            this.ConsoleText.Text = "This will be replaced!\r\nThis is what the console font will look like!";
             // 
             // openFileDiag
             // 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,9 +15,38 @@ namespace SPIRVCompilerGUI
 {
     public partial class Form1 : Form
     {
+
+        readonly Process cmdProc = new Process();
+        StreamWriter cmd;
+
         public Form1()
         {
             InitializeComponent();
+
+            // set up the console!
+            
+            cmdProc.StartInfo.FileName = "cmd.exe";
+            cmdProc.StartInfo.CreateNoWindow = true;
+            cmdProc.EnableRaisingEvents = true;
+            cmdProc.StartInfo.RedirectStandardInput = true;
+            cmdProc.StartInfo.RedirectStandardOutput = true;
+            cmdProc.StartInfo.RedirectStandardError = true;
+
+            cmdProc.ErrorDataReceived += ConsoleDataReceived;
+            cmdProc.OutputDataReceived += ConsoleDataReceived;
+
+            cmdProc.Start();
+            cmdProc.BeginErrorReadLine();
+            cmdProc.BeginOutputReadLine();
+            cmd = cmdProc.StandardInput;
+            cmd.WriteLine("@echo off\ncls");
+            cmd.WriteLine("echo GLSL Tools GUI command line.");
+        }
+
+        public void ConsoleDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            ConsoleText.Text += e.Data + "\r\n";
+            if (e.Data.Contains('\f')) { ConsoleText.Text = ""; }
         }
 
         private void CompileButton_Click(object sender, EventArgs e)
