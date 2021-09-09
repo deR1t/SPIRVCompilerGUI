@@ -22,7 +22,12 @@ namespace SPIRVCompilerGUI
         private void CompileButton_Click(object sender, EventArgs e)
         { // incoming cheese code
 
-            StringBuilder cmd = new StringBuilder("glslangValidator.exe ");
+            if (!File.Exists(InputFileBox.Text))
+            { // todo: scream at the user for being silly or something
+                return;
+            }
+
+            StringBuilder cmd = new StringBuilder("glslangValidator.exe \"" + InputFileBox.Text + "\" ");
             Dictionary<string, bool> boolFlags = new Dictionary<string, bool>
             { // these are all simple check boxes
                 {"-C", flagC.Checked},
@@ -79,11 +84,18 @@ namespace SPIRVCompilerGUI
             string[] args = flagI.Text.Split('\n');
             foreach (var arg in args)
             {
-                flagIArg.Append($"-I \"{arg.Replace("\r", "")}\"");
+                if (arg != "")
+                {
+                    flagIArg.Append($"-I \"{arg.Replace("\r", "")}\"");
+                }
             }
 
             cmd.Append(flagIArg);
 
+            // we always compile vulkan because i'm only using vulkan
+            // and also i dont feel like adding a checkbox.
+            cmd.Append($"-V -o \"{OutputFileBox.Text}\"");
+            
             CompilePreview.Text = cmd.ToString();
 
         }
