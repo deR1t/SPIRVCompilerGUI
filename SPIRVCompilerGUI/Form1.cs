@@ -77,7 +77,7 @@ namespace SPIRVCompilerGUI
             string[] args = flagI.Text.Split('\n');
             foreach (var arg in args)
             {
-                flagIArg.Append($"-I \"{arg}\" ");
+                flagIArg.Append($"-I \"{arg.Replace("\r", "")}\"");
             }
 
             cmd.Append(flagIArg);
